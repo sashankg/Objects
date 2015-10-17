@@ -19,7 +19,7 @@
 		41E0D2BE1BD2DDC900AA7417 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E0D2BC1BD2DDC900AA7417 /* ReactiveCocoa.framework */; };
 		41E0D2BF1BD2DDC900AA7417 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E0D2BD1BD2DDC900AA7417 /* Result.framework */; };
 		41E0D2C41BD2DE4F00AA7417 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 41E0D2C31BD2DE4F00AA7417 /* Cartfile */; settings = {ASSET_TAGS = (); }; };
-		41E0D2C61BD2DFE400AA7417 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E0D2C51BD2DFE400AA7417 /* CloudKit.framework */; };
+		41E0D2CB1BD2E0B200AA7417 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E0D2CA1BD2E0B200AA7417 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,8 @@
 		41E0D2BC1BD2DDC900AA7417 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		41E0D2BD1BD2DDC900AA7417 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		41E0D2C31BD2DE4F00AA7417 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
-		41E0D2C51BD2DFE400AA7417 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		41E0D2C81BD2E08500AA7417 /* Objects.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Objects.entitlements; sourceTree = "<group>"; };
+		41E0D2CA1BD2E0B200AA7417 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41E0D2C61BD2DFE400AA7417 /* CloudKit.framework in Frameworks */,
+				41E0D2CB1BD2E0B200AA7417 /* CloudKit.framework in Frameworks */,
 				41E0D2BE1BD2DDC900AA7417 /* ReactiveCocoa.framework in Frameworks */,
 				41E0D2BF1BD2DDC900AA7417 /* Result.framework in Frameworks */,
 			);
@@ -119,9 +120,7 @@
 				41E0CCD01BD2CD6500AA7417 /* AppDelegate.swift */,
 				41E0CCD21BD2CD6500AA7417 /* ViewController.swift */,
 				41E0CCD41BD2CD6500AA7417 /* Main.storyboard */,
-				41E0CCD71BD2CD6500AA7417 /* Assets.xcassets */,
-				41E0CCD91BD2CD6500AA7417 /* LaunchScreen.storyboard */,
-				41E0CCDC1BD2CD6500AA7417 /* Info.plist */,
+				41E0D2C91BD2E09900AA7417 /* Supporting Files */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -147,11 +146,22 @@
 		41E0D2C71BD2DFF400AA7417 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				41E0D2CA1BD2E0B200AA7417 /* CloudKit.framework */,
 				41E0D2BD1BD2DDC900AA7417 /* Result.framework */,
 				41E0D2BC1BD2DDC900AA7417 /* ReactiveCocoa.framework */,
-				41E0D2C51BD2DFE400AA7417 /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		41E0D2C91BD2E09900AA7417 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				41E0CCD71BD2CD6500AA7417 /* Assets.xcassets */,
+				41E0CCD91BD2CD6500AA7417 /* LaunchScreen.storyboard */,
+				41E0CCDC1BD2CD6500AA7417 /* Info.plist */,
+				41E0D2C81BD2E08500AA7417 /* Objects.entitlements */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +233,11 @@
 					41E0CCCC1BD2CD6500AA7417 = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = AM9HB9AS3S;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					41E0CCE01BD2CD6500AA7417 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -450,6 +465,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Objects/Objects.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -476,6 +492,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Objects/Objects.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
