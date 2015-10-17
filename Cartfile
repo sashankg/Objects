@@ -1,0 +1,2 @@
+github "ReactiveCocoa/ReactiveCocoa" == 4.0.1
+#sudo carthage update --platform iOS --no-use-binaries (to update)
