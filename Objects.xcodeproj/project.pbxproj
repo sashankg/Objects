@@ -79,11 +79,11 @@
 		41E0CCC41BD2CD6500AA7417 = {
 			isa = PBXGroup;
 			children = (
-				41E0CCFE1BD2D7B400AA7417 /* README.md */,
 				41E0CCCF1BD2CD6500AA7417 /* Objects */,
 				41E0CCE41BD2CD6500AA7417 /* ObjectsTests */,
 				41E0CCEF1BD2CD6500AA7417 /* ObjectsUITests */,
 				41E0CCCE1BD2CD6500AA7417 /* Products */,
+				41E0CCFE1BD2D7B400AA7417 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -487,6 +487,7 @@
 				41E0CCF71BD2CD6500AA7417 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		41E0CCF81BD2CD6500AA7417 /* Build configuration list for PBXNativeTarget "ObjectsTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +496,7 @@
 				41E0CCFA1BD2CD6500AA7417 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		41E0CCFB1BD2CD6500AA7417 /* Build configuration list for PBXNativeTarget "ObjectsUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +505,7 @@
 				41E0CCFD1BD2CD6500AA7417 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
