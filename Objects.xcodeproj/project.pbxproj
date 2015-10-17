@@ -19,6 +19,7 @@
 		41E0D2BE1BD2DDC900AA7417 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E0D2BC1BD2DDC900AA7417 /* ReactiveCocoa.framework */; };
 		41E0D2BF1BD2DDC900AA7417 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E0D2BD1BD2DDC900AA7417 /* Result.framework */; };
 		41E0D2C41BD2DE4F00AA7417 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 41E0D2C31BD2DE4F00AA7417 /* Cartfile */; settings = {ASSET_TAGS = (); }; };
+		41E0D2C61BD2DFE400AA7417 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E0D2C51BD2DFE400AA7417 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		41E0D2BC1BD2DDC900AA7417 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		41E0D2BD1BD2DDC900AA7417 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		41E0D2C31BD2DE4F00AA7417 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		41E0D2C51BD2DFE400AA7417 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41E0D2C61BD2DFE400AA7417 /* CloudKit.framework in Frameworks */,
 				41E0D2BE1BD2DDC900AA7417 /* ReactiveCocoa.framework in Frameworks */,
 				41E0D2BF1BD2DDC900AA7417 /* Result.framework in Frameworks */,
 			);
@@ -95,7 +98,8 @@
 				41E0CCCE1BD2CD6500AA7417 /* Products */,
 				41E0CCFE1BD2D7B400AA7417 /* README.md */,
 				41E0CD001BD2DA4A00AA7417 /* .gitignore */,
-				41E0D2C21BD2DE3000AA7417 /* Carthage */,
+				41E0D2C31BD2DE4F00AA7417 /* Cartfile */,
+				41E0D2C71BD2DFF400AA7417 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,22 +144,14 @@
 			path = ObjectsUITests;
 			sourceTree = "<group>";
 		};
-		41E0D2C11BD2DE2000AA7417 /* Build */ = {
+		41E0D2C71BD2DFF400AA7417 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				41E0D2BC1BD2DDC900AA7417 /* ReactiveCocoa.framework */,
 				41E0D2BD1BD2DDC900AA7417 /* Result.framework */,
+				41E0D2BC1BD2DDC900AA7417 /* ReactiveCocoa.framework */,
+				41E0D2C51BD2DFE400AA7417 /* CloudKit.framework */,
 			);
-			name = Build;
-			sourceTree = "<group>";
-		};
-		41E0D2C21BD2DE3000AA7417 /* Carthage */ = {
-			isa = PBXGroup;
-			children = (
-				41E0D2C31BD2DE4F00AA7417 /* Cartfile */,
-				41E0D2C11BD2DE2000AA7417 /* Build */,
-			);
-			name = Carthage;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +222,7 @@
 				TargetAttributes = {
 					41E0CCCC1BD2CD6500AA7417 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = AM9HB9AS3S;
 					};
 					41E0CCE01BD2CD6500AA7417 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -453,6 +450,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -469,6 +468,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sg.Objects;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -476,6 +476,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -492,6 +494,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sg.Objects;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
