@@ -14,6 +14,8 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
+		let test = ObjectPreview(frame: CGRectMake(100, 100, 100, 100))
+		view.addSubview(test)
 	}
 
 	override func didReceiveMemoryWarning() {
