@@ -11,7 +11,7 @@ import CloudKit
 
 protocol Value {
 	func type() -> ValueType
-	func toCKRecordValue() -> CKRecordValue
+	func toRecordValue() -> CKRecordValue
 }
 
 struct Object: Value {
