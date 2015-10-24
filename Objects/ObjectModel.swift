@@ -23,4 +23,21 @@ struct Object {
 	}
 }
 
-protocol Value { }
+enum ValueType
+{
+	case Text, Number, Other
+	
+	func toString() -> String
+	{
+		switch self {
+		case .Text: return "Text"
+		case .Number: return "Number"
+		default: return ""
+		}
+	}
+}
+
+protocol Value {
+	func type() -> ValueType
+}
+
