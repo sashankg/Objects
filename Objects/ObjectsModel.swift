@@ -38,7 +38,7 @@ struct Object: Value {
 		return .Object
 	}
 	
-	func toCKRecordValue() -> CKRecordValue {
+	func toRecordValue() -> CKRecordValue {
 		return CKReference(recordID: CKRecordID(recordName: id), action: .DeleteSelf)
 	}
 }
