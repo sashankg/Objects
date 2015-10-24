@@ -7,10 +7,22 @@
 //
 
 import Foundation
+import CloudKit
 
-struct Object {
+protocol Value {
+	func type() -> ValueType
+	func toCKRecordValue() -> CKRecordValue
+}
+
+struct Object: Value {
 	
 	private var dictionary: [String: Value]
+	private var id: String
+	init()
+	{
+		dictionary = [String: Value]()
+		id = NSUUID().UUIDString
+	}
 	
 	subscript(key: String) -> Value?
 	{
@@ -21,11 +33,19 @@ struct Object {
 	var keys: [String] {
 		return dictionary.keys.flatMap { return $0 }
 	}
+	
+	func type() -> ValueType {
+		return .Object
+	}
+	
+	func toCKRecordValue() -> CKRecordValue {
+		return CKReference(recordID: CKRecordID(recordName: id), action: .DeleteSelf)
+	}
 }
 
 enum ValueType
 {
-	case Text, Number, Other
+	case Text, Number, Object, Other
 	
 	func toString() -> String
 	{
@@ -37,7 +57,4 @@ enum ValueType
 	}
 }
 
-protocol Value {
-	func type() -> ValueType
-}
 
