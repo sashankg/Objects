@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		410208581BDC23C3005A769E /* InfiniteScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410208571BDC23C3005A769E /* InfiniteScrollView.swift */; settings = {ASSET_TAGS = (); }; };
+		41E02DA11BDC8CBD0010A0A4 /* ObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E02DA01BDC8CBD0010A0A4 /* ObjectView.swift */; settings = {ASSET_TAGS = (); }; };
+		41E02DA31BDD12670010A0A4 /* ObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E02DA21BDD12670010A0A4 /* ObjectViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		41E0CCD11BD2CD6500AA7417 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E0CCD01BD2CD6500AA7417 /* AppDelegate.swift */; };
 		41E0CCD31BD2CD6500AA7417 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E0CCD21BD2CD6500AA7417 /* ViewController.swift */; };
 		41E0CCD61BD2CD6500AA7417 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41E0CCD41BD2CD6500AA7417 /* Main.storyboard */; };
@@ -41,7 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		410208571BDC23C3005A769E /* InfiniteScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollView.swift; sourceTree = "<group>"; };
+		41E02DA01BDC8CBD0010A0A4 /* ObjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectView.swift; sourceTree = "<group>"; };
+		41E02DA21BDD12670010A0A4 /* ObjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectViewController.swift; sourceTree = "<group>"; };
 		41E0CCCD1BD2CD6500AA7417 /* Objects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Objects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41E0CCD01BD2CD6500AA7417 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41E0CCD21BD2CD6500AA7417 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,7 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				41E0CCD21BD2CD6500AA7417 /* ViewController.swift */,
-				410208571BDC23C3005A769E /* InfiniteScrollView.swift */,
+				41E02DA21BDD12670010A0A4 /* ObjectViewController.swift */,
+				41E02DA01BDC8CBD0010A0A4 /* ObjectView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -334,8 +337,9 @@
 			files = (
 				41E0CCFF1BD2D7B400AA7417 /* README.md in Sources */,
 				41E0CCD31BD2CD6500AA7417 /* ViewController.swift in Sources */,
+				41E02DA11BDC8CBD0010A0A4 /* ObjectView.swift in Sources */,
 				41E0CCD11BD2CD6500AA7417 /* AppDelegate.swift in Sources */,
-				410208581BDC23C3005A769E /* InfiniteScrollView.swift in Sources */,
+				41E02DA31BDD12670010A0A4 /* ObjectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
@@ -16,45 +17,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ifN-u9-C7E">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5c-2m-Sgh">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="uQs-ow-1x5"/>
+                                </connections>
                             </scrollView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l27-VU-YME">
-                                <rect key="frame" x="0.0" y="557" width="600" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l27-VU-YME">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <animations/>
                                 <items>
-                                    <barButtonItem title="Item" id="SeR-jN-j8c"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="46w-NM-Acb"/>
+                                    <barButtonItem systemItem="add" id="SeR-jN-j8c"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hye-qS-D2c"/>
                                 </items>
                             </toolbar>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JLb-bn-d3E">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <animations/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="N6h-wy-VyI"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="l27-VU-YME" secondAttribute="bottom" id="5o9-Ce-Owj"/>
+                            <constraint firstAttribute="trailing" secondItem="c5c-2m-Sgh" secondAttribute="trailing" id="AOf-yK-ZHk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="c5c-2m-Sgh" secondAttribute="bottom" id="SmS-Ir-n2a"/>
+                            <constraint firstItem="l27-VU-YME" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ka8-zg-Co7"/>
+                            <constraint firstItem="c5c-2m-Sgh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pfi-Ax-GGU"/>
+                            <constraint firstItem="c5c-2m-Sgh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ptd-E2-j7N"/>
+                            <constraint firstAttribute="trailing" secondItem="l27-VU-YME" secondAttribute="trailing" id="zaI-Zj-uP1"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="searchDisplayController" destination="d2d-Lm-pda" id="uGS-xl-XvQ"/>
+                        <outlet property="scrollView" destination="c5c-2m-Sgh" id="dRp-vM-vaq"/>
+                        <segue destination="TXn-22-j0P" kind="show" identifier="toObjectViewController" animates="NO" id="0V0-yM-Lim"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="d2d-Lm-pda">
-                    <connections>
-                        <outlet property="delegate" destination="BYZ-38-t0r" id="Hsq-js-80U"/>
-                        <outlet property="searchBar" destination="JLb-bn-d3E" id="sHi-c9-amH"/>
-                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="Z6a-Lg-Wnw"/>
-                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="N0Z-VC-9eD"/>
-                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="a7E-CN-JGg"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="54" y="410"/>
+            <point key="canvasLocation" x="293" y="321"/>
+        </scene>
+        <!--Object View Controller-->
+        <scene sceneID="gTv-QE-DwD">
+            <objects>
+                <viewController id="TXn-22-j0P" customClass="ObjectViewController" customModule="Objects" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I7T-WF-mAx"/>
+                        <viewControllerLayoutGuide type="bottom" id="C63-8f-DTV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9iN-CY-jh5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3r1-Ir-7WM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="987" y="321"/>
         </scene>
     </scenes>
 </document>
