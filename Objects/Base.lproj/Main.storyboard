@@ -46,14 +46,16 @@
                             <constraint firstAttribute="trailing" secondItem="l27-VU-YME" secondAttribute="trailing" id="zaI-Zj-uP1"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="dx9-ub-YWN"/>
                     <connections>
+                        <outlet property="bottomConstraint" destination="5o9-Ce-Owj" id="tH1-G4-e3g"/>
                         <outlet property="scrollView" destination="c5c-2m-Sgh" id="dRp-vM-vaq"/>
-                        <segue destination="TXn-22-j0P" kind="show" identifier="toObjectViewController" animates="NO" id="0V0-yM-Lim"/>
+                        <segue destination="TXn-22-j0P" kind="presentation" identifier="toObjectViewController" animates="NO" id="0V0-yM-Lim"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="293" y="321"/>
+            <point key="canvasLocation" x="1105" y="321"/>
         </scene>
         <!--Object View Controller-->
         <scene sceneID="gTv-QE-DwD">
@@ -66,13 +68,75 @@
                     <view key="view" contentMode="scaleToFill" id="9iN-CY-jh5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAP-5Y-59W">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="AdV-ed-kaO"/>
+                                    <barButtonItem systemItem="action" id="lSD-25-tef"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2xC-ew-feA"/>
+                                    <barButtonItem image="mergeIcon" style="plain" id="f82-0i-6oL"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cuB-zc-cks"/>
+                                    <barButtonItem systemItem="trash" id="GnL-1U-xKH"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Kk1-ux-E7e"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X81-w8-ROK" userLabel="BS">
+                                <rect key="frame" x="0.0" y="-24" width="600" height="44"/>
+                                <animations/>
+                                <items/>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cw7-3T-OTo">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Title" id="nX5-vL-tUb">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Hb5-3U-Zky">
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="TXn-22-j0P" id="kYk-M2-Px2"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JPL-Ku-dL0"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Cw7-3T-OTo" firstAttribute="top" secondItem="X81-w8-ROK" secondAttribute="bottom" id="8no-yG-LSd"/>
+                            <constraint firstAttribute="trailing" secondItem="Cw7-3T-OTo" secondAttribute="trailing" id="9Ha-od-7D8"/>
+                            <constraint firstAttribute="trailing" secondItem="X81-w8-ROK" secondAttribute="trailing" id="C0k-aY-kAO"/>
+                            <constraint firstItem="bAP-5Y-59W" firstAttribute="leading" secondItem="9iN-CY-jh5" secondAttribute="leading" id="K2s-I4-5dl"/>
+                            <constraint firstItem="X81-w8-ROK" firstAttribute="leading" secondItem="9iN-CY-jh5" secondAttribute="leading" id="KVh-xW-UvS"/>
+                            <constraint firstItem="C63-8f-DTV" firstAttribute="top" secondItem="bAP-5Y-59W" secondAttribute="bottom" id="Tep-DI-My9"/>
+                            <constraint firstItem="X81-w8-ROK" firstAttribute="top" secondItem="9iN-CY-jh5" secondAttribute="top" constant="-24" id="c0w-1g-Ft7"/>
+                            <constraint firstAttribute="trailing" secondItem="bAP-5Y-59W" secondAttribute="trailing" id="cJh-DG-AD4"/>
+                            <constraint firstItem="Cw7-3T-OTo" firstAttribute="leading" secondItem="9iN-CY-jh5" secondAttribute="leading" id="fAr-pt-b5Q"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="rMN-16-PMV" appends="YES" id="BGP-n5-t4L"/>
+                        </connections>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="bottomContstraint" destination="Tep-DI-My9" id="jXZ-GC-Hlg"/>
+                        <outlet property="topConstraint" destination="c0w-1g-Ft7" id="wyQ-hF-Rd4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3r1-Ir-7WM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="rMN-16-PMV">
+                    <connections>
+                        <action selector="pinchToClose:" destination="TXn-22-j0P" id="say-d5-AC1"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="987" y="321"/>
+            <point key="canvasLocation" x="1799" y="321"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mergeIcon" width="23" height="24"/>
+    </resources>
 </document>

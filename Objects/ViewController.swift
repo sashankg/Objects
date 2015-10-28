@@ -12,21 +12,18 @@ import ReactiveCocoa
 class ViewController: UIViewController, UIScrollViewDelegate {
 	
 	@IBOutlet weak var scrollView: UIScrollView!
+	@IBOutlet weak var bottomConstraint: NSLayoutConstraint!
 	
 	var views = [[ObjectView]]()
 	var yViews = [[ObjectView]]()
 	var size: CGFloat = 100
 	var space: CGFloat = 50
 	
+	var openedObject: ObjectView?
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-	}
-	
-	override func viewDidAppear(animated: Bool) {
-		super.viewDidAppear(animated)
-		// Do any additional setup after loading the view, typically from a nib.
 		scrollView.contentSize = CGSizeMake(view.frame.width + 1, view.frame.height + 1)
-		
 		for i in 0...5
 		{
 			views.append([ObjectView]())
@@ -35,7 +32,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 				let x = CGFloat(i) * (size + space) + CGFloat(j%2) * (size + space)/2
 				let y = CGFloat(j) * (size + space)
 				let v = ObjectView(frame: CGRectMake(x, y, size, size))
-				v.backgroundColor = UIColor(red: 0, green: CGFloat(i + 1)/6, blue: CGFloat(j + 1)/6, alpha: 1.0)
+				v.backgroundColor = UIColor(red: CGFloat(j + i + 2)/15, green: 0, blue: 1, alpha: 1.0)
 				v.controller = self
 				scrollView.addSubview(v)
 				views[i].append(v)
@@ -48,7 +45,17 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 			{
 				yViews[i].append(views[j][i])
 			}
-		}	}
+		}
+	}
+	
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+		if let object = openedObject
+		{
+			object.shrinkBack()
+		}
+		// Do any additional setup after loading the view, typically from a nib.
+	}
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		let object = sender as! ObjectView
@@ -135,6 +142,22 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 			}
 		}
 		scrollView.contentOffset = CGPointMake(0, 0)
+	}
+	
+	func hideToolBar()
+	{
+		bottomConstraint.constant = -44
+		UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseOut, animations: { () -> Void in
+			self.view.layoutIfNeeded()
+			}, completion: nil)
+	}
+	
+	func showToolBar()
+	{
+		bottomConstraint.constant = 0
+		UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseOut, animations: { () -> Void in
+			self.view.layoutIfNeeded()
+			}, completion: nil)
 	}
 }
 
