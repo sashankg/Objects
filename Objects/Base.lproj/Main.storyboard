@@ -17,10 +17,102 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="l27-VU-YME" secondAttribute="bottom" id="5o9-Ce-Owj"/>
+                            <constraint firstAttribute="trailing" secondItem="c5c-2m-Sgh" secondAttribute="trailing" id="AOf-yK-ZHk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="c5c-2m-Sgh" secondAttribute="bottom" id="SmS-Ir-n2a"/>
+                            <constraint firstItem="l27-VU-YME" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ka8-zg-Co7"/>
+                            <constraint firstItem="c5c-2m-Sgh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pfi-Ax-GGU"/>
+                            <constraint firstItem="c5c-2m-Sgh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ptd-E2-j7N"/>
+                            <constraint firstAttribute="trailing" secondItem="l27-VU-YME" secondAttribute="trailing" id="zaI-Zj-uP1"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="dx9-ub-YWN"/>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="5o9-Ce-Owj" id="tH1-G4-e3g"/>
+                        <outlet property="scrollView" destination="c5c-2m-Sgh" id="dRp-vM-vaq"/>
+                        <segue destination="OMm-ZN-o9H" kind="show" identifier="toObjectViewController" animates="NO" id="Dwb-U9-aOl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1917" y="321"/>
+        </scene>
+        <!--Object View Controller-->
+        <scene sceneID="ZeH-I4-cAe">
+            <objects>
+                <viewController id="OMm-ZN-o9H" customClass="ObjectViewController" customModule="Objects" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yWV-ny-CrI"/>
+                        <viewControllerLayoutGuide type="bottom" id="oNL-Nd-I4d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TQP-pc-8Pf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ue1-eT-clm">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="9P3-BP-Mu4"/>
+                                    <barButtonItem systemItem="action" id="nYW-lh-pmM">
+                                        <color key="tintColor" red="0.74901960779999999" green="0.33333333329999998" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="T5P-u5-M6S"/>
+                                    <barButtonItem image="mergeIcon" id="vLV-Sn-dKA">
+                                        <color key="tintColor" red="0.74901960779999999" green="0.33333333329999998" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="enR-E8-e7K"/>
+                                    <barButtonItem systemItem="trash" id="JRl-Tq-Wxm">
+                                        <color key="tintColor" red="0.74901960779999999" green="0.33333333329999998" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Se0-a5-wK1"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oNL-Nd-I4d" firstAttribute="top" secondItem="ue1-eT-clm" secondAttribute="bottom" id="Fdj-JG-J84"/>
+                            <constraint firstAttribute="trailing" secondItem="ue1-eT-clm" secondAttribute="trailing" id="mQQ-Yg-sfg"/>
+                            <constraint firstItem="ue1-eT-clm" firstAttribute="leading" secondItem="TQP-pc-8Pf" secondAttribute="leading" id="ukM-Tr-WEa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomContstraint" destination="Fdj-JG-J84" id="ciL-uG-rkk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mj4-7B-PmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2732" y="321"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VYp-ns-PSY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eCI-PL-i5s" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TX6-Oz-oS0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="diK-Dx-Gyh">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oI8-YC-ymM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hNT-lK-nQR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1105" y="321"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mergeIcon" width="23" height="24"/>
+        <image name="queueIcon" width="24" height="21"/>
+    </resources>
 </document>
