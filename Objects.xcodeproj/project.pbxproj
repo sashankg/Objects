@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		410208561BDAFEE1005A769E /* ObjectsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410208551BDAFEE1005A769E /* ObjectsModel.swift */; settings = {ASSET_TAGS = (); }; };
+		41E02DA11BDC8CBD0010A0A4 /* ObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E02DA01BDC8CBD0010A0A4 /* ObjectView.swift */; };
+		41E02DA31BDD12670010A0A4 /* ObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E02DA21BDD12670010A0A4 /* ObjectViewController.swift */; };
 		41E0CCD11BD2CD6500AA7417 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E0CCD01BD2CD6500AA7417 /* AppDelegate.swift */; };
 		41E0CCD31BD2CD6500AA7417 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E0CCD21BD2CD6500AA7417 /* ViewController.swift */; };
 		41E0CCD61BD2CD6500AA7417 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41E0CCD41BD2CD6500AA7417 /* Main.storyboard */; };
@@ -50,7 +51,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		410208551BDAFEE1005A769E /* ObjectsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectsModel.swift; sourceTree = "<group>"; };
+		0E0E105A2C929403FF6450D9 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F580836310FFB8D328AA2CF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		41E02DA01BDC8CBD0010A0A4 /* ObjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectView.swift; sourceTree = "<group>"; };
+		41E02DA21BDD12670010A0A4 /* ObjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectViewController.swift; sourceTree = "<group>"; };
 		41E0CCCD1BD2CD6500AA7417 /* Objects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Objects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41E0CCD01BD2CD6500AA7417 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41E0CCD21BD2CD6500AA7417 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
