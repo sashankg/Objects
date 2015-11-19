@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eCI-PL-i5s">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Objects" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Objects" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5c-2m-Sgh">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5c-2m-Sgh">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <connections>
@@ -28,9 +28,20 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <animations/>
                                 <items>
+                                    <barButtonItem image="queueIcon" id="eDq-RI-5pR">
+                                        <color key="tintColor" red="0.74901960779999999" green="0.33333333329999998" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="46w-NM-Acb"/>
-                                    <barButtonItem systemItem="add" id="SeR-jN-j8c"/>
+                                    <barButtonItem systemItem="add" id="SeR-jN-j8c">
+                                        <color key="tintColor" red="0.74901960779999999" green="0.33333333329999998" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="newObjectButton:" destination="BYZ-38-t0r" id="1Sm-aA-GCP"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="hye-qS-D2c"/>
+                                    <barButtonItem systemItem="search" id="gHH-kn-XAP">
+                                        <color key="tintColor" red="0.74901960779999999" green="0.33333333329999998" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -50,93 +61,88 @@
                     <connections>
                         <outlet property="bottomConstraint" destination="5o9-Ce-Owj" id="tH1-G4-e3g"/>
                         <outlet property="scrollView" destination="c5c-2m-Sgh" id="dRp-vM-vaq"/>
-                        <segue destination="TXn-22-j0P" kind="presentation" identifier="toObjectViewController" animates="NO" id="0V0-yM-Lim"/>
+                        <segue destination="OMm-ZN-o9H" kind="show" identifier="toObjectViewController" animates="NO" id="Dwb-U9-aOl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1105" y="321"/>
+            <point key="canvasLocation" x="1917" y="321"/>
         </scene>
         <!--Object View Controller-->
-        <scene sceneID="gTv-QE-DwD">
+        <scene sceneID="ZeH-I4-cAe">
             <objects>
-                <viewController id="TXn-22-j0P" customClass="ObjectViewController" customModule="Objects" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OMm-ZN-o9H" customClass="ObjectViewController" customModule="Objects" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="I7T-WF-mAx"/>
-                        <viewControllerLayoutGuide type="bottom" id="C63-8f-DTV"/>
+                        <viewControllerLayoutGuide type="top" id="yWV-ny-CrI"/>
+                        <viewControllerLayoutGuide type="bottom" id="oNL-Nd-I4d"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9iN-CY-jh5">
+                    <view key="view" contentMode="scaleToFill" id="TQP-pc-8Pf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAP-5Y-59W">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ue1-eT-clm">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <animations/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="AdV-ed-kaO"/>
-                                    <barButtonItem systemItem="action" id="lSD-25-tef"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2xC-ew-feA"/>
-                                    <barButtonItem image="mergeIcon" style="plain" id="f82-0i-6oL"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cuB-zc-cks"/>
-                                    <barButtonItem systemItem="trash" id="GnL-1U-xKH"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Kk1-ux-E7e"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="9P3-BP-Mu4"/>
+                                    <barButtonItem systemItem="action" id="nYW-lh-pmM">
+                                        <color key="tintColor" red="0.74901960779999999" green="0.33333333329999998" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="T5P-u5-M6S"/>
+                                    <barButtonItem image="mergeIcon" id="vLV-Sn-dKA">
+                                        <color key="tintColor" red="0.74901960779999999" green="0.33333333329999998" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="enR-E8-e7K"/>
+                                    <barButtonItem systemItem="trash" id="JRl-Tq-Wxm">
+                                        <color key="tintColor" red="0.74901960779999999" green="0.33333333329999998" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Se0-a5-wK1"/>
                                 </items>
                             </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X81-w8-ROK" userLabel="BS">
-                                <rect key="frame" x="0.0" y="-24" width="600" height="44"/>
-                                <animations/>
-                                <items/>
-                            </toolbar>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cw7-3T-OTo">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <animations/>
-                                <items>
-                                    <navigationItem title="Title" id="nX5-vL-tUb">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Hb5-3U-Zky">
-                                            <connections>
-                                                <action selector="backButtonPressed:" destination="TXn-22-j0P" id="kYk-M2-Px2"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JPL-Ku-dL0"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <gestureRecognizers/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Cw7-3T-OTo" firstAttribute="top" secondItem="X81-w8-ROK" secondAttribute="bottom" id="8no-yG-LSd"/>
-                            <constraint firstAttribute="trailing" secondItem="Cw7-3T-OTo" secondAttribute="trailing" id="9Ha-od-7D8"/>
-                            <constraint firstAttribute="trailing" secondItem="X81-w8-ROK" secondAttribute="trailing" id="C0k-aY-kAO"/>
-                            <constraint firstItem="bAP-5Y-59W" firstAttribute="leading" secondItem="9iN-CY-jh5" secondAttribute="leading" id="K2s-I4-5dl"/>
-                            <constraint firstItem="X81-w8-ROK" firstAttribute="leading" secondItem="9iN-CY-jh5" secondAttribute="leading" id="KVh-xW-UvS"/>
-                            <constraint firstItem="C63-8f-DTV" firstAttribute="top" secondItem="bAP-5Y-59W" secondAttribute="bottom" id="Tep-DI-My9"/>
-                            <constraint firstItem="X81-w8-ROK" firstAttribute="top" secondItem="9iN-CY-jh5" secondAttribute="top" constant="-24" id="c0w-1g-Ft7"/>
-                            <constraint firstAttribute="trailing" secondItem="bAP-5Y-59W" secondAttribute="trailing" id="cJh-DG-AD4"/>
-                            <constraint firstItem="Cw7-3T-OTo" firstAttribute="leading" secondItem="9iN-CY-jh5" secondAttribute="leading" id="fAr-pt-b5Q"/>
+                            <constraint firstItem="oNL-Nd-I4d" firstAttribute="top" secondItem="ue1-eT-clm" secondAttribute="bottom" id="Fdj-JG-J84"/>
+                            <constraint firstAttribute="trailing" secondItem="ue1-eT-clm" secondAttribute="trailing" id="mQQ-Yg-sfg"/>
+                            <constraint firstItem="ue1-eT-clm" firstAttribute="leading" secondItem="TQP-pc-8Pf" secondAttribute="leading" id="ukM-Tr-WEa"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="rMN-16-PMV" appends="YES" id="BGP-n5-t4L"/>
-                        </connections>
                     </view>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="bottomContstraint" destination="Tep-DI-My9" id="jXZ-GC-Hlg"/>
-                        <outlet property="topConstraint" destination="c0w-1g-Ft7" id="wyQ-hF-Rd4"/>
+                        <outlet property="bottomContstraint" destination="Fdj-JG-J84" id="ciL-uG-rkk"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3r1-Ir-7WM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pinchGestureRecognizer id="rMN-16-PMV">
-                    <connections>
-                        <action selector="pinchToClose:" destination="TXn-22-j0P" id="say-d5-AC1"/>
-                    </connections>
-                </pinchGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mj4-7B-PmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1799" y="321"/>
+            <point key="canvasLocation" x="2732" y="321"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VYp-ns-PSY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eCI-PL-i5s" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TX6-Oz-oS0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="diK-Dx-Gyh">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oI8-YC-ymM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hNT-lK-nQR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1105" y="321"/>
         </scene>
     </scenes>
     <resources>
         <image name="mergeIcon" width="23" height="24"/>
+        <image name="queueIcon" width="24" height="21"/>
     </resources>
 </document>

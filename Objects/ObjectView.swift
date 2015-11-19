@@ -20,6 +20,8 @@ class ObjectView: UIView {
 		}
 	}
 	
+	var button: UIButton!
+	
 	var storedFrame: CGRect!
 	var isAnimating: Bool!
 	var controller: ViewController!
@@ -29,8 +31,9 @@ class ObjectView: UIView {
 		CGContextFillEllipseInRect(cr, rect)
 	}
 	
-	override init(frame: CGRect) {
+	init(frame: CGRect, controller: ViewController) {
 		super.init(frame: frame)
+		self.controller = controller
 		initialize()
 	}
 	
@@ -43,12 +46,15 @@ class ObjectView: UIView {
 	{
 		super.backgroundColor = UIColor.clearColor()
 		isAnimating = false
-		let button = UIButton(frame: CGRectMake(0, 0, frame.width, frame.height))
+		button = UIButton(frame: CGRectMake(0, 0, frame.width, frame.height))
 		addSubview(button)
-		button.addTarget(self, action: "fillSuperview:", forControlEvents: .TouchUpInside)
+		button.addTarget(self, action: "fillSuperview", forControlEvents: .TouchUpInside)
+		let v = UIView(frame: CGRectMake(frame.width/2 - 5, frame.height/2 - 5, 10, 10))
+		v.backgroundColor = UIColor.greenColor()
+		addSubview(v)
 	}
 	
-	func fillSuperview(sender: UIButton)
+	func fillSuperview()
 	{
 		storedFrame = frame
 		superview?.bringSubviewToFront(self)

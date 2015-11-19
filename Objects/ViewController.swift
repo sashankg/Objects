@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ReactiveCocoa
+//import ReactiveCocoa
 
 class ViewController: UIViewController, UIScrollViewDelegate {
 	
@@ -23,17 +23,18 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		navigationController?.navigationBarHidden = true
 		scrollView.contentSize = CGSizeMake(view.frame.width + 1, view.frame.height + 1)
+		let screen = UIScreen.mainScreen().bounds
 		for i in 0...5
 		{
 			views.append([ObjectView]())
 			for j in 0...5
 			{
-				let x = CGFloat(i) * (size + space) + CGFloat(j%2) * (size + space)/2
-				let y = CGFloat(j) * (size + space)
-				let v = ObjectView(frame: CGRectMake(x, y, size, size))
+				let x = CGFloat(i) * (size + space) + CGFloat(j%2) * (size + space)/2 + screen.width/2 - size/2
+				let y = CGFloat(j) * (size + space) + screen.height/2 - size/2
+				let v = ObjectView(frame: CGRectMake(x, y, size, size), controller: self)
 				v.backgroundColor = UIColor(red: CGFloat(j + i + 2)/15, green: 0, blue: 1, alpha: 1.0)
-				v.controller = self
 				scrollView.addSubview(v)
 				views[i].append(v)
 			}
@@ -46,6 +47,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 				yViews[i].append(views[j][i])
 			}
 		}
+		scrollView.contentOffset = CGPointMake(-1, -1)
+		scrollViewDidScroll(scrollView)
 	}
 	
 	override func viewDidAppear(animated: Bool) {
@@ -66,7 +69,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 	}
 	
 	func scrollViewDidScroll(scrollView: UIScrollView) {
-		
 		func animateViewEntrance(view: ObjectView)
 		{
 			if view.isAnimating == true { return }
@@ -93,7 +95,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 			}
 			views.insert(views.removeLast(), atIndex: 0)
 		}
-		else if scrollView.contentOffset.x > 0 && views[0][1].frame.origin.x + size < 0
+		else if scrollView.contentOffset.x > 0 && views[0][1].frame.origin.x + size + space < 0
 		{
 			var shift: CGFloat = 0
 			for i in 0...views[0].count-1
@@ -158,6 +160,20 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 		UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseOut, animations: { () -> Void in
 			self.view.layoutIfNeeded()
 			}, completion: nil)
+	}
+	@IBAction func newObjectButton(sender: AnyObject) {
+		let frame = UIScreen.mainScreen().bounds
+		let new = ObjectView(frame: CGRectMake(frame.width/2 - 50, frame.height + 100, 100, 100), controller: self)
+		new.transform = CGAffineTransformMakeScale(0.1, 0.1)
+		view.addSubview(new)
+		UIView.animateWithDuration(0.4, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+				new.frame.origin.y = frame.height/2 - 5
+				new.transform = CGAffineTransformMakeScale(1, 1)
+
+			}) { (_) -> Void in
+				new.fillSuperview()
+		}
+		
 	}
 }
 

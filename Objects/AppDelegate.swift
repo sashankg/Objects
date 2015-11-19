@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//import ReactiveCocoa
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -44,3 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension UIColor {
+	static func tintColor() -> UIColor
+	{
+		return UIColor(red: 191/255.0, green: 85/255.0, blue: 236/255.0, alpha: 1.0)
+	}
+}
