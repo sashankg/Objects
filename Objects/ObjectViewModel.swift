@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ReactiveCocoa
+import Interstellar
 
 class ObjectViewModel: NSObject  {
 		
