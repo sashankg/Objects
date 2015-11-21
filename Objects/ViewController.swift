@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import ReactiveCocoa
+import Interstellar
 
 class ViewController: UIViewController, UIScrollViewDelegate {
 	
@@ -161,6 +161,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 			self.view.layoutIfNeeded()
 			}, completion: nil)
 	}
+	
 	@IBAction func newObjectButton(sender: AnyObject) {
 		let frame = UIScreen.mainScreen().bounds
 		let new = ObjectView(frame: CGRectMake(frame.width/2 - 50, frame.height + 100, 100, 100), controller: self)

@@ -139,7 +139,6 @@
 				416D619D1BD3F28600BAD3BB /* View */,
 				41E0CCD41BD2CD6500AA7417 /* Main.storyboard */,
 				41E0D2C91BD2E09900AA7417 /* Supporting Files */,
-				410208551BDAFEE1005A769E /* ObjectsModel.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -393,8 +392,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				410208561BDAFEE1005A769E /* ObjectsModel.swift in Sources */,
-				41E0CCFF1BD2D7B400AA7417 /* README.md in Sources */,
 				41E0CCD31BD2CD6500AA7417 /* ViewController.swift in Sources */,
 				41E02DA11BDC8CBD0010A0A4 /* ObjectView.swift in Sources */,
 				41E0CCD11BD2CD6500AA7417 /* AppDelegate.swift in Sources */,
