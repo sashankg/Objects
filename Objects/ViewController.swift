@@ -144,8 +144,19 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 			}
 		}
 		scrollView.contentOffset = CGPointMake(0, 0)
+		let _ = views.map { a in
+			a.map { objectView in
+				if !CGRectIntersectsRect(view.frame, objectView.frame)
+				{
+					objectView.removeFromSuperview()
+				}
+				else if let _ = objectView.superview
+				{
+					view.addSubview(objectView)
+				}
+			}
+		}
 	}
-	
 	func hideToolBar()
 	{
 		bottomConstraint.constant = -44
