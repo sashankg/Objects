@@ -23,6 +23,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
 		navigationController?.navigationBarHidden = true
 		scrollView.contentSize = CGSizeMake(view.frame.width + 1, view.frame.height + 1)
 		let screen = UIScreen.mainScreen().bounds
