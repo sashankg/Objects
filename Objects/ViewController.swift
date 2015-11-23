@@ -26,10 +26,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 		navigationController?.navigationBarHidden = true
 		scrollView.contentSize = CGSizeMake(view.frame.width + 1, view.frame.height + 1)
 		let screen = UIScreen.mainScreen().bounds
-		for i in 0...5
+		for i in 0...10
 		{
 			views.append([ObjectView]())
-			for j in 0...5
+			for j in 0...10
 			{
 				let x = CGFloat(i) * (size + space) + CGFloat(j%2) * (size + space)/2 + screen.width/2 - size/2
 				let y = CGFloat(j) * (size + space) + screen.height/2 - size/2
@@ -152,10 +152,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 				}
 				else if let _ = objectView.superview
 				{
-					view.addSubview(objectView)
+				}
+				else
+				{
+					scrollView.addSubview(objectView)
 				}
 			}
 		}
+		
+		print(scrollView.subviews)
+		print("\n\n\n\n\n\n")
 	}
 	func hideToolBar()
 	{
